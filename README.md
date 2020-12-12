@@ -13,3 +13,7 @@ $ ./gradlew clean build
 ```
 $ java -jar geektrust.jar {init file} {input file}
 ```
+
+```
+$ java -jar geektrust.jar input/init.txt input/input.txt
+```
