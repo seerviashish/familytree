@@ -91,7 +91,7 @@ a:hover {
   max-width: 720px;
   margin: 0 auto;
   /* Comfortable gutters that grow with the viewport (never cramped on mobile). */
-  padding: 0 clamp(28px, 6vw, 48px);
+  padding: 0 clamp(36px, 7vw, 56px);
 }
 
 .site-header {
