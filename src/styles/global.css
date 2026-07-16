@@ -88,9 +88,10 @@ a:hover {
 
 .container {
   width: 100%;
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 0 24px;
+  /* Comfortable gutters that grow with the viewport (never cramped on mobile). */
+  padding: 0 clamp(28px, 6vw, 48px);
 }
 
 .site-header {
