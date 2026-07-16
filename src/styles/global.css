@@ -229,7 +229,8 @@ h3 {
 /* ---- Cards / callouts ------------------------------------------------------ */
 
 .section {
-  padding: 48px 0;
+  /* Vertical only — must NOT reset the horizontal padding inherited from .container. */
+  padding-block: 48px;
 }
 
 .card {
@@ -293,7 +294,7 @@ h3 {
 /* ---- Home ------------------------------------------------------------------ */
 
 .hero {
-  padding: 72px 0 40px;
+  padding-block: 72px 40px;
   text-align: center;
 }
 
