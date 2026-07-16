@@ -1,0 +1,28 @@
+{
+  "name": "familytree-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Landing, Privacy Policy and Terms pages for the Family Tree Android app — hosted on GitHub Pages at seerviashish.github.io/familytree/",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/manrope": "^5.2.5",
+    "@fontsource/spectral": "^5.2.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  }
+}

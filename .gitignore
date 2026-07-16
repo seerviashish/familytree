@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+
+# build output
+dist/
+
+# logs
+*.log
+yarn-error.log
+npm-debug.log*
+
+# editor / os
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.local
+
+# vite
+.vite/
+
+# typescript incremental build info
+*.tsbuildinfo

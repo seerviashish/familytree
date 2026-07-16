@@ -1,0 +1,9 @@
+# Normalize line endings to LF in the repository (consistent across Windows/CI).
+* text=auto eol=lf
+
+# Binary assets — never normalize.
+*.woff binary
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.ico binary
