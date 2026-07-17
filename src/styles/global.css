@@ -373,6 +373,18 @@ h3 {
   border-bottom-color: var(--on-faint);
 }
 
+.btn-danger {
+  background: #e0695f;
+  color: #2a0d0a;
+  border: 1px solid #e0695f;
+}
+
+.btn-danger:hover {
+  background: #ea7d74;
+  color: #2a0d0a;
+  border-bottom-color: #ea7d74;
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

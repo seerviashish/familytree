@@ -12,6 +12,11 @@ dist/
 yarn-error.log
 npm-debug.log*
 
+# local env (Firebase web config) — the template .env.example stays tracked
+.env
+.env.*
+!.env.example
+
 # editor / os
 .vscode/*
 !.vscode/extensions.json

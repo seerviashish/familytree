@@ -15,4 +15,5 @@ export const paths = {
   home: '/familytree/',
   privacy: '/familytree/privacy-policy/',
   terms: '/familytree/terms/',
+  deleteAccount: '/familytree/account-deletion/',
 } as const

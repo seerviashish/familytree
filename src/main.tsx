@@ -14,24 +14,30 @@ import { Home } from './pages/Home.tsx'
 import { PrivacyPolicy } from './pages/PrivacyPolicy.tsx'
 import { Terms } from './pages/Terms.tsx'
 
-// Each HTML entry sets <body data-page="…">; render the matching page into #root. This
-// keeps one JS bundle across the multi-page build while every route stays a static file.
-type Page = 'home' | 'privacy' | 'terms'
+// Each HTML entry sets <body data-page="…">; render the matching page into #root. Every
+// route stays a static file. The delete-account page is loaded dynamically so Firebase is
+// only pulled in there — the legal pages stay lightweight.
+const container = document.getElementById('root')
 
-const pages: Record<Page, () => React.ReactElement> = {
-  home: Home,
-  privacy: PrivacyPolicy,
-  terms: Terms,
+function mount(View: () => React.ReactElement) {
+  if (container) {
+    createRoot(container).render(
+      <StrictMode>
+        <View />
+      </StrictMode>,
+    )
+  }
 }
 
-const page = (document.body.dataset.page ?? 'home') as Page
-const View = pages[page] ?? Home
+const page = document.body.dataset.page ?? 'home'
 
-const container = document.getElementById('root')
-if (container) {
-  createRoot(container).render(
-    <StrictMode>
-      <View />
-    </StrictMode>,
-  )
+if (page === 'delete') {
+  import('./pages/DeleteAccount.tsx').then((m) => mount(m.DeleteAccount))
+} else {
+  const pages: Record<string, () => React.ReactElement> = {
+    home: Home,
+    privacy: PrivacyPolicy,
+    terms: Terms,
+  }
+  mount(pages[page] ?? Home)
 }

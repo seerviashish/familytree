@@ -50,6 +50,7 @@ export function Layout({ children }: { children: ReactNode }) {
           <nav className="nav" aria-label="Footer">
             <a href={paths.privacy}>Privacy Policy</a>
             <a href={paths.terms}>Terms</a>
+            <a href={paths.deleteAccount}>Delete account</a>
             <a href={`mailto:${meta.contactEmail}`}>Contact</a>
           </nav>
         </div>

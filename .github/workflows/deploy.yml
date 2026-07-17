@@ -37,7 +37,17 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      # Firebase Web config for the account-deletion page. Vite only inlines VITE_-prefixed
+      # vars, and the build fails fast if any are missing — so a deploy can't silently ship
+      # a deletion page that can't delete anything.
       - name: Build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
         run: yarn build
 
       - name: Disable Jekyll processing
