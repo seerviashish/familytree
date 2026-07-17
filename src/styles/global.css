@@ -230,7 +230,7 @@ h3 {
 
 .section {
   /* Vertical only — must NOT reset the horizontal padding inherited from .container. */
-  padding-block: 48px;
+  padding-block: 24px;
 }
 
 .card {
