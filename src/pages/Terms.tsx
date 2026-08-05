@@ -28,6 +28,7 @@ export function Terms() {
       kind="Terms & Conditions"
       title="Terms & Conditions"
       intro={`These terms are the agreement between you and ${meta.developer} for your use of the ${meta.appName} ${meta.platform} app.`}
+      updated={meta.termsUpdated}
       toc={toc}
     >
       <Section id="acceptance" title="1. Acceptance of these terms">

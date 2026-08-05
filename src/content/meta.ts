@@ -4,8 +4,12 @@ export const meta = {
   platform: 'Android',
   developer: 'Ashishkumar Chaudhary',
   contactEmail: 'seerviashish17@gmail.com',
-  // Human-readable "last updated" shown on the legal pages. Update when the text changes.
-  effectiveDate: 'July 17, 2026',
+  // Human-readable "last updated" shown on each legal page. Bump the one whose text changed —
+  // they are separate so amending one document cannot claim the other was revised too.
+  privacyUpdated: 'August 6, 2026',
+  termsUpdated: 'July 17, 2026',
+  // Year in the footer; tracks whichever document was touched most recently.
+  copyrightYear: '2026',
   governingLaw: 'India',
   baseUrl: 'https://seerviashish.github.io/familytree',
   androidPackage: 'io.seerviashish.android.familytree',

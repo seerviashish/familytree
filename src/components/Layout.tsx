@@ -45,7 +45,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="site-footer">
         <div className="container">
           <span>
-            © {meta.effectiveDate.split(', ')[1] ?? '2026'} {meta.appName}. Built by {meta.developer}.
+            © {meta.copyrightYear} {meta.appName}. Built by {meta.developer}.
           </span>
           <nav className="nav" aria-label="Footer">
             <a href={paths.privacy}>Privacy Policy</a>

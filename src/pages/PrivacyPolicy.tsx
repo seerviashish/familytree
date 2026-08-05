@@ -26,6 +26,7 @@ export function PrivacyPolicy() {
       kind="Privacy Policy"
       title="Privacy Policy"
       intro={`This policy explains what the ${meta.appName} ${meta.platform} app collects, why, how it is stored, and the control you have over it.`}
+      updated={meta.privacyUpdated}
       toc={toc}
     >
       <Section id="who-we-are" title="1. Who we are">
@@ -83,6 +84,21 @@ export function PrivacyPolicy() {
           collect your precise location, your contacts, or your device&rsquo;s files beyond a photo you
           explicitly choose.
         </p>
+
+        <h3>App and device integrity checks</h3>
+        <p>
+          To stop other software from impersonating the app and reaching your data, the app uses{' '}
+          <strong>Firebase App Check</strong> with Google&rsquo;s <strong>Play Integrity API</strong>.
+          Before your data is read or written, Google Play services on your device produces a signed
+          verdict that the app is a genuine, unmodified copy running on a genuine Android device, and
+          the app exchanges it for a short-lived token that accompanies each request.
+        </p>
+        <p>
+          The signals involved are about the <em>app and the device</em> — the package name and signing
+          certificate, the app and Play services version, and Google&rsquo;s integrity verdict for the
+          device. They do <strong>not</strong> identify you, and they never include the content of your
+          family tree. Google&rsquo;s handling of them is governed by its own terms and privacy policy.
+        </p>
       </Section>
 
       <Section id="how-we-use" title="4. How we use your information">
@@ -90,6 +106,7 @@ export function PrivacyPolicy() {
           <li><strong>Provide the service</strong> — save, sync and display your family tree across your sessions and devices.</li>
           <li><strong>Authenticate you</strong> — sign you in securely and keep your data scoped to your account.</li>
           <li><strong>Keep it working</strong> — diagnose crashes and errors and understand which features are used, so we can fix and improve the app.</li>
+          <li><strong>Protect it</strong> — verify that requests come from the genuine app, to prevent abuse of the service and unauthorised access to accounts.</li>
           <li><strong>Support you</strong> — respond to messages you send us.</li>
         </ul>
         <p>We do not use your family information for advertising or profiling, and we do not sell it.</p>
@@ -113,7 +130,8 @@ export function PrivacyPolicy() {
           <li><strong>Firebase Authentication</strong> — Google Sign-In and session management;</li>
           <li><strong>Cloud Firestore</strong> — your people and relationships;</li>
           <li><strong>Firebase Storage</strong> — the photos you upload;</li>
-          <li><strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> — diagnostics.</li>
+          <li><strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> — diagnostics;</li>
+          <li><strong>Firebase App Check</strong> with the <strong>Play Integrity API</strong> — verifying that requests come from the genuine app.</li>
         </ul>
         <p>
           Access is scoped to your account: security rules on Firestore and Storage permit reading and
@@ -163,9 +181,11 @@ export function PrivacyPolicy() {
       <Section id="security" title="10. Security">
         <p>
           Data is encrypted in transit (HTTPS/TLS) and at rest on Google Cloud. Access is restricted to
-          your authenticated account through Firebase security rules. Sensitive actions such as account
-          deletion require you to re-authenticate with Google. No method of transmission or storage is
-          perfectly secure, but we work to protect your information using industry-standard measures.
+          your authenticated account through Firebase security rules, and Firebase App Check verifies
+          that requests come from the genuine app rather than from other software holding a copied
+          key. Sensitive actions such as account deletion require you to re-authenticate with Google.
+          No method of transmission or storage is perfectly secure, but we work to protect your
+          information using industry-standard measures.
         </p>
       </Section>
 

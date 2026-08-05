@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { Layout } from './Layout.tsx'
-import { meta } from '../content/meta.ts'
 
 export interface TocItem {
   id: string
@@ -11,12 +10,15 @@ export function LegalDoc({
   kind,
   title,
   intro,
+  updated,
   toc,
   children,
 }: {
   kind: string
   title: string
   intro: string
+  /** This document's own "last updated" date — see meta.privacyUpdated / meta.termsUpdated. */
+  updated: string
   toc: TocItem[]
   children: ReactNode
 }) {
@@ -25,7 +27,7 @@ export function LegalDoc({
       <article className="container doc section">
         <span className="overline">{kind}</span>
         <h1>{title}</h1>
-        <p className="updated">Last updated: {meta.effectiveDate}</p>
+        <p className="updated">Last updated: {updated}</p>
         <p className="lede">{intro}</p>
 
         <nav className="toc" aria-label="On this page">
